@@ -72,33 +72,52 @@ export function buildSearchPromptText(profile, preferences, iterationNumber) {
     ? `\nDODATKOWY KONTEKST O KANDYDACIE:\n${profile.cvSummary}`
     : '';
 
-  return `Jestes ekspertem od rynku pracy w Polsce. Twoim zadaniem jest znalezienie ofert pracy WYLACZNIE ZDALNEJ dla kandydata o unikalnym profilu jezykowym i humanistycznym.
+  return `Jestes ekspertem od rynku pracy w Polsce. Twoim zadaniem jest znalezienie ofert pracy WYLACZNIE ZDALNEJ dla kandydatki o wszechstronnym doswiadczeniu: e-commerce, administracja biurowa, handel miedzynarodowy (rynki wschodnie), fotografia i jezyk rosyjski.
 
 Przeszukaj WSZYSTKIE ponizsze portale:
 ${sitesList}
 
-PROFIL KANDYDATA:
+PROFIL KANDYDATKI:
 - Imie: ${profile.name}
 ${roleText}
+- Doswiadczenie: ${profile.experienceYears || 0} lat
 ${languagesText}
 ${skillsText}
 ${educationText}
-- Tryb pracy: WYLACZNIE PRACA ZDALNA (lokalizacja kandydata nie ma znaczenia)
+- Tryb pracy: WYLACZNIE PRACA ZDALNA (lokalizacja nie ma znaczenia)
 - Typ umowy: ${CONTRACT_LABELS[profile.preferredContractType] || 'Dowolny'}
 ${salaryText}
 ${profile.linkedinUrl ? `- LinkedIn: ${profile.linkedinUrl}` : ''}
 ${cvText}
 
-KLUCZOWE ATUTY KANDYDATA (uwzglednij przy wyszukiwaniu):
-- Biegla znajomosc jezyka rosyjskiego - szukaj ofert gdzie rosyjski jest wymagany lub mile widziany
-- Wyksztalcenie filologiczne (mgr) - kompetencje jezykowe, redakcyjne, translatorskie
-- Mozliwe kierunki poszukiwan: tlumaczenia, content writing, copywriting, moderacja tresci, obsluga klienta rosyjskojezycznego, asystentka wirtualna, koordynacja projektow, praca z dokumentacja, administracja, data entry, social media, e-commerce, rekrutacja na rynki wschodnie, QA/testowanie (jezykowe), lokalizacja oprogramowania
-- NIE ograniczaj sie do jednego stanowiska - szukaj ROZNORODNYCH ofert pasujacych do kompetencji
+KLUCZOWE ATUTY KANDYDATKI (uwzglednij przy wyszukiwaniu):
+1. E-COMMERCE (5 lat) - prowadzenie wlasnego sklepu (Shoper), Super Sprzedawca Allegro (100-300 zamowien/mies.), Etsy (rynki miedzynarodowe), IdoSell, Dawanda, Pakamera. Szukaj: specjalista e-commerce, marketplace manager, obsluga zamowien, koordynator sprzedazy online
+2. ADMINISTRACJA BIUROWA (2 lata) - fakturowanie (Optima, SubiektGT), obsluga biura, dokumentacja, delegacje, kalendarz. Szukaj: asystentka zdalna, wirtualna asystentka, office manager zdalny, administrator dokumentow
+3. HANDEL MIEDZYNARODOWY / ROSYJSKI (7 lat) - eksport na Ukraine, Rosje, Bialorus, kraje baltyckie. Targi w Kijowie, Minsku, Moskwie. Kontrakty zagraniczne, przychod 1+ mln zl/rok. Szukaj: koordynator eksportu, obsluga klienta rosyjskojezycznego, rynki wschodnie
+4. JEZYK ROSYJSKI zaawansowany - tlumaczenia, komunikacja biznesowa. Szukaj: tlumacz rosyjski, moderator rosyjskojezyczny, content rosyjski
+5. FOTOGRAFIA (nagradzana) - TOP20 Huawei Next Image, wygrane konkursy. Fotografia produktowa i reportazowa. Szukaj: fotograf produktowy zdalny, obrobka zdjec, content creator
+6. SOCIAL MEDIA i CONTENT - prowadzenie mediow spolecznosciowych, zdjecia produktowe, analiza rynku. Szukaj: social media manager, content manager, copywriter
+7. MS Excel (tabele przestawne), PowerPoint, systemy ERP (Optima, SubiektGT, IdoSell)
+
+Mozliwe kierunki poszukiwan (szukaj WSZYSTKICH):
+- Specjalista/koordynator e-commerce, marketplace specialist
+- Wirtualna asystentka, asystent zdalny
+- Obsluga klienta (szczegolnie rosyjskojezycznego)
+- Administrator, koordynator biurowy zdalny
+- Tlumacz rosyjski, lokalizacja
+- Content creator, social media manager, copywriter
+- Fotograf produktowy, obrobka zdjec
+- Koordynator projektow, koordynator zamowien
+- Data entry, wprowadzanie danych
+- Moderator tresci
+- Rekrutacja na rynki wschodnie
+- Specjalista ds. eksportu (zdalnie)
 
 BEZWZGLEDNE WYKLUCZENIA (NIGDY nie pokazuj takich ofert):
 - Praca stacjonarna lub hybrydowa - TYLKO praca w pelni zdalna
-- Stanowiska wymagajace pozyskiwania klientow, cold callingu, sprzedazy aktywnej, telemarketingu
-- Stanowiska wymagajace bieglego angielskiego (kandydat zna angielski tylko podstawowo)
+- Stanowiska wymagajace pozyskiwania nowych klientow, cold callingu, sprzedazy aktywnej, telemarketingu, akwizycji
+- Stanowiska wymagajace bieglego angielskiego (kandydatka zna angielski tylko podstawowo)
+- Stanowiska programistyczne/developerskie
 ${negativePrefText}
 ${positivePrefText}
 ${excludedCompanies}
@@ -106,7 +125,7 @@ ${excludedCompanies}
 To jest iteracja numer ${iterationNumber}.${iterationNumber > 1 ? ' Wczesniejsze iteracje juz przeszukaly czesc ofert - szukaj NOWYCH ofert, ktore nie byly wczesniej prezentowane. Badz kreatywna w wyszukiwaniu - probuj nowych slow kluczowych i kombinacji.' : ''}
 
 INSTRUKCJE:
-1. Przeszukaj kazdy portal uzywajac roznych slow kluczowych: "rosyjski", "russian", "tlumacz", "translator", "content", "zdalna", "remote", "moderator", "asystent", "koordynator", "redaktor" itp.
+1. Przeszukaj kazdy portal uzywajac ROZNYCH slow kluczowych: "e-commerce zdalna", "rosyjski", "asystentka zdalna", "obsluga zamowien", "marketplace", "allegro", "administrator zdalny", "social media", "content", "tlumacz", "koordynator", "fotograf produktowy", "virtual assistant" itp.
 2. Zwroc MINIMUM 15 ofert pracy (im wiecej, tym lepiej)
 3. Dla kazdej oferty podaj dane w DOKLADNIE tym formacie markdown:
 
@@ -124,10 +143,10 @@ INSTRUKCJE:
 WAZNE:
 - Kazda oferta MUSI byc oddzielona linia "---"
 - Podawaj PRAWDZIWE, aktualne linki do ofert
-- Priorytetyzuj oferty gdzie jezyk rosyjski jest atutem
+- Priorytetyzuj oferty gdzie doswiadczenie e-commerce, jezyk rosyjski lub administracja sa atutem
 - ROZNORODNOSC - pokaz oferty z roznych branzy i o roznych stanowiskach
 - Jesli oferta jest po angielsku, przetlumacz opis na polski
-- Nie pokazuj ofert wymagajacych bieglego angielskiego`;
+- Nie pokazuj ofert wymagajacych bieglego angielskiego lub programowania`;
 }
 
 export function buildEmailPromptText(profile, job, companyContext) {
