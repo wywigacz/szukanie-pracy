@@ -4,10 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="0">
   <title>Asystent Szukania Pracy</title>
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/dompurify@3.3.1/dist/purify.min.js"></script>
 </head>
@@ -16,14 +17,20 @@
     <!-- Header -->
     <header class="header">
       <div class="header-left">
-        <h1 class="logo">Asystent Szukania Pracy</h1>
+        <div class="logo-icon">&#128188;</div>
+        <div class="logo-text">
+          <h1 class="logo">JobHunter</h1>
+          <span class="logo-subtitle">Asystent szukania pracy</span>
+        </div>
         <span id="iteration-badge" class="badge badge-info" hidden>Iteracja 0</span>
       </div>
       <div class="header-right">
         <span id="storage-indicator" class="storage-indicator"></span>
-        <button id="btn-export" class="btn btn-sm btn-outline" title="Eksportuj dane">Eksportuj</button>
-        <label class="btn btn-sm btn-outline" title="Importuj dane">
-          Importuj
+        <button id="btn-export" class="btn btn-ghost btn-sm" title="Eksportuj dane">
+          <span class="btn-icon">&#128190;</span> Eksportuj
+        </button>
+        <label class="btn btn-ghost btn-sm" title="Importuj dane">
+          <span class="btn-icon">&#128194;</span> Importuj
           <input type="file" id="btn-import" accept=".json" hidden>
         </label>
       </div>
@@ -31,44 +38,70 @@
 
     <!-- Navigation -->
     <nav class="nav-tabs">
-      <button class="nav-tab active" data-hash="#profil">Profil</button>
-      <button class="nav-tab" data-hash="#szukaj">Szukaj</button>
-      <button class="nav-tab" data-hash="#wyniki">Wyniki</button>
-      <button class="nav-tab" data-hash="#sledzenie">Sledzenie</button>
-      <button class="nav-tab" data-hash="#email">E-mail</button>
+      <button class="nav-tab active" data-hash="#profil">
+        <span class="nav-tab-icon">&#128100;</span>
+        <span class="nav-tab-label">Profil</span>
+      </button>
+      <button class="nav-tab" data-hash="#szukaj">
+        <span class="nav-tab-icon">&#128269;</span>
+        <span class="nav-tab-label">Szukaj</span>
+      </button>
+      <button class="nav-tab" data-hash="#wyniki">
+        <span class="nav-tab-icon">&#128203;</span>
+        <span class="nav-tab-label">Wyniki</span>
+      </button>
+      <button class="nav-tab" data-hash="#sledzenie">
+        <span class="nav-tab-icon">&#128200;</span>
+        <span class="nav-tab-label">Sledzenie</span>
+      </button>
+      <button class="nav-tab" data-hash="#email">
+        <span class="nav-tab-icon">&#9993;</span>
+        <span class="nav-tab-label">E-mail</span>
+      </button>
     </nav>
 
     <!-- Tab: Profil -->
     <section id="tab-profile" class="tab-panel">
-      <div class="panel">
-        <h2 class="panel-title">Dane osobowe</h2>
-        <form id="profile-form">
+      <div class="tab-header">
+        <h2 class="tab-title">&#128100; Twoj profil</h2>
+        <p class="tab-description">Twoje dane i doswiadczenie. System uzywa ich do generowania spersonalizowanych promptow.</p>
+      </div>
+
+      <form id="profile-form">
+        <div class="panel">
+          <div class="panel-header">
+            <h3 class="panel-title">Dane osobowe</h3>
+          </div>
           <div class="form-row">
             <div class="form-group">
-              <label for="prof-name">Imie i nazwisko *</label>
-              <input type="text" id="prof-name" required>
+              <label for="prof-name">Imie i nazwisko</label>
+              <input type="text" id="prof-name" required placeholder="Anna Kowalska">
             </div>
             <div class="form-group">
-              <label for="prof-email">Email *</label>
-              <input type="email" id="prof-email" required>
+              <label for="prof-email">Email</label>
+              <input type="email" id="prof-email" placeholder="anna@email.com">
             </div>
           </div>
           <div class="form-row">
             <div class="form-group">
               <label for="prof-phone">Telefon</label>
-              <input type="tel" id="prof-phone">
+              <input type="tel" id="prof-phone" placeholder="+48 123 456 789">
             </div>
             <div class="form-group">
-              <label for="prof-location">Lokalizacja *</label>
-              <input type="text" id="prof-location" required placeholder="np. Warszawa">
+              <label for="prof-location">Lokalizacja</label>
+              <input type="text" id="prof-location" placeholder="np. Gdansk (praca zdalna)">
             </div>
           </div>
+        </div>
 
-          <h2 class="panel-title">Doswiadczenie</h2>
+        <div class="panel">
+          <div class="panel-header">
+            <h3 class="panel-title">Doswiadczenie zawodowe</h3>
+          </div>
           <div class="form-row">
             <div class="form-group">
-              <label for="prof-role">Obecne stanowisko</label>
-              <input type="text" id="prof-role" placeholder="np. Frontend Developer">
+              <label for="prof-role">Dotychczasowe stanowisko / specjalizacja</label>
+              <input type="text" id="prof-role" placeholder="np. Specjalista e-commerce / Administracja">
             </div>
             <div class="form-group">
               <label for="prof-experience">Lata doswiadczenia</label>
@@ -76,33 +109,37 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="prof-skills-input">Umiejetnosci (Enter aby dodac)</label>
+            <label for="prof-skills-input">Umiejetnosci <span class="label-hint">(Enter aby dodac)</span></label>
             <div class="chip-input-wrapper">
               <div id="prof-skills-chips" class="chips-container"></div>
-              <input type="text" id="prof-skills-input" placeholder="np. JavaScript, React...">
+              <input type="text" id="prof-skills-input" placeholder="np. Allegro, Shoper, Excel, Fakturowanie...">
             </div>
           </div>
           <div class="form-group">
-            <label for="prof-languages-input">Jezyki (Enter aby dodac)</label>
+            <label for="prof-languages-input">Jezyki <span class="label-hint">(Enter aby dodac)</span></label>
             <div class="chip-input-wrapper">
               <div id="prof-languages-chips" class="chips-container"></div>
-              <input type="text" id="prof-languages-input" placeholder="np. Polski (native), English (B2)">
+              <input type="text" id="prof-languages-input" placeholder="np. Polski (ojczysty), Rosyjski (biegly)">
             </div>
           </div>
           <div class="form-group">
             <label for="prof-education">Wyksztalcenie</label>
-            <input type="text" id="prof-education" placeholder="np. Politechnika Warszawska, Informatyka">
+            <input type="text" id="prof-education" placeholder="np. Magister filologii rosyjskiej, Uniwersytet Gdanski">
           </div>
+        </div>
 
-          <h2 class="panel-title">Preferencje</h2>
+        <div class="panel">
+          <div class="panel-header">
+            <h3 class="panel-title">Preferencje</h3>
+          </div>
           <div class="form-row">
             <div class="form-group">
-              <label for="prof-salary-min">Wynagrodzenie min (PLN)</label>
-              <input type="number" id="prof-salary-min" min="0" step="500">
+              <label for="prof-salary-min">Wynagrodzenie min (PLN netto)</label>
+              <input type="number" id="prof-salary-min" min="0" step="500" placeholder="4000">
             </div>
             <div class="form-group">
-              <label for="prof-salary-max">Wynagrodzenie max (PLN)</label>
-              <input type="number" id="prof-salary-max" min="0" step="500">
+              <label for="prof-salary-max">Wynagrodzenie max (PLN netto)</label>
+              <input type="number" id="prof-salary-max" min="0" step="500" placeholder="opcjonalne">
             </div>
           </div>
           <div class="form-row">
@@ -125,11 +162,15 @@
               </select>
             </div>
           </div>
+        </div>
 
-          <h2 class="panel-title">CV - podsumowanie</h2>
+        <div class="panel">
+          <div class="panel-header">
+            <h3 class="panel-title">Podsumowanie CV</h3>
+          </div>
           <div class="form-group">
-            <label for="prof-cv">Opisz krotko swoje doswiadczenie i osiagniecia</label>
-            <textarea id="prof-cv" rows="6" placeholder="Np. 5 lat doswiadczenia w tworzeniu aplikacji webowych..."></textarea>
+            <label for="prof-cv">Opisz swoje doswiadczenie, osiagniecia i kluczowe kompetencje</label>
+            <textarea id="prof-cv" rows="8" placeholder="Np. 14 lat doswiadczenia zawodowego w e-commerce, administracji biurowej i handlu miedzynarodowym..."></textarea>
           </div>
           <div class="form-row">
             <div class="form-group">
@@ -141,45 +182,103 @@
               <input type="url" id="prof-portfolio" placeholder="https://...">
             </div>
           </div>
+        </div>
 
-          <button type="submit" class="btn btn-primary btn-lg">Zapisz profil</button>
-        </form>
-      </div>
+        <div class="form-footer">
+          <button type="submit" class="btn btn-primary btn-lg">
+            <span class="btn-icon">&#10004;</span> Zapisz profil
+          </button>
+        </div>
+      </form>
     </section>
 
     <!-- Tab: Szukaj -->
     <section id="tab-search" class="tab-panel" hidden>
-      <div class="panel">
-        <h2 class="panel-title">Krok 1: Generuj prompt wyszukiwania</h2>
-        <div class="step-info">
-          <p id="search-prefs-summary">Wypelnij profil aby wygenerowac prompt.</p>
+      <div class="tab-header">
+        <h2 class="tab-title">&#128269; Wyszukiwanie ofert</h2>
+        <p class="tab-description">3 proste kroki: wygeneruj prompt, skopiuj do Claude, wklej odpowiedz.</p>
+      </div>
+
+      <!-- Step indicators -->
+      <div class="steps-indicator">
+        <div class="step-dot active" data-step="1">
+          <span class="step-number">1</span>
+          <span class="step-label">Generuj</span>
         </div>
-        <button id="btn-generate-prompt" class="btn btn-primary" disabled>Generuj prompt wyszukiwania</button>
+        <div class="step-line"></div>
+        <div class="step-dot" data-step="2">
+          <span class="step-number">2</span>
+          <span class="step-label">Kopiuj</span>
+        </div>
+        <div class="step-line"></div>
+        <div class="step-dot" data-step="3">
+          <span class="step-number">3</span>
+          <span class="step-label">Wklej</span>
+        </div>
       </div>
 
-      <div id="prompt-output-section" class="panel" hidden>
-        <h2 class="panel-title">Krok 2: Skopiuj prompt do Claude</h2>
-        <textarea id="generated-prompt" class="prompt-textarea" readonly rows="12"></textarea>
-        <button id="btn-copy-prompt" class="btn btn-secondary">Kopiuj do schowka</button>
+      <!-- Step 1 -->
+      <div class="panel step-panel" data-step="1">
+        <div class="panel-header">
+          <h3 class="panel-title"><span class="step-badge">1</span> Generuj prompt wyszukiwania</h3>
+        </div>
+        <div class="step-info" id="search-prefs-summary">
+          <p>Wypelnij profil aby wygenerowac prompt.</p>
+        </div>
+        <button id="btn-generate-prompt" class="btn btn-primary btn-lg" disabled>
+          <span class="btn-icon">&#9889;</span> Generuj prompt
+        </button>
       </div>
 
-      <div class="panel">
-        <h2 class="panel-title">Krok 3: Wklej odpowiedz z Claude</h2>
-        <textarea id="response-input" class="prompt-textarea" rows="12" placeholder="Wklej tutaj odpowiedz z Claude (markdown z ofertami pracy)..."></textarea>
+      <!-- Step 2 -->
+      <div id="prompt-output-section" class="panel step-panel" data-step="2" hidden>
+        <div class="panel-header">
+          <h3 class="panel-title"><span class="step-badge">2</span> Skopiuj prompt i wklej do Claude</h3>
+        </div>
+        <div class="prompt-help">
+          Kliknij "Kopiuj", przejdz do <a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a> i wklej prompt. Poczekaj na odpowiedz.
+        </div>
+        <textarea id="generated-prompt" class="prompt-textarea" readonly rows="10"></textarea>
         <div class="form-actions">
-          <button id="btn-parse-response" class="btn btn-primary" disabled>Przetwarz odpowiedz</button>
-          <span id="parse-preview" class="text-muted"></span>
+          <button id="btn-copy-prompt" class="btn btn-secondary btn-lg">
+            <span class="btn-icon">&#128203;</span> Kopiuj do schowka
+          </button>
         </div>
       </div>
 
+      <!-- Step 3 -->
+      <div class="panel step-panel" data-step="3">
+        <div class="panel-header">
+          <h3 class="panel-title"><span class="step-badge">3</span> Wklej odpowiedz z Claude</h3>
+        </div>
+        <div class="prompt-help">
+          Skopiuj cala odpowiedz Claude (w formacie markdown z ofertami pracy) i wklej ponizej.
+        </div>
+        <textarea id="response-input" class="prompt-textarea" rows="10" placeholder="Wklej tutaj odpowiedz z Claude..."></textarea>
+        <div class="form-actions">
+          <button id="btn-parse-response" class="btn btn-primary btn-lg" disabled>
+            <span class="btn-icon">&#128640;</span> Przetworz odpowiedz
+          </button>
+          <span id="parse-preview" class="parse-preview"></span>
+        </div>
+      </div>
+
+      <!-- History -->
       <div id="iterations-history" class="panel" hidden>
-        <h2 class="panel-title">Historia iteracji</h2>
+        <div class="panel-header">
+          <h3 class="panel-title">&#128197; Historia iteracji</h3>
+        </div>
         <div id="iterations-list"></div>
       </div>
     </section>
 
     <!-- Tab: Wyniki -->
     <section id="tab-results" class="tab-panel" hidden>
+      <div class="tab-header">
+        <h2 class="tab-title">&#128203; Wyniki wyszukiwania</h2>
+        <p class="tab-description">Ocen oferty: zaznacz te ktore Cie interesuja i te ktore nie. System uczy sie Twoich preferencji.</p>
+      </div>
+
       <div class="results-toolbar">
         <div class="filters-bar">
           <select id="filter-iteration" class="filter-select">
@@ -192,22 +291,31 @@
             <option value="applied">Aplikowalam</option>
             <option value="not_interested">Nie interesuje mnie</option>
           </select>
-          <input type="text" id="filter-search" class="filter-input" placeholder="Szukaj...">
+          <input type="text" id="filter-search" class="filter-input" placeholder="&#128269; Szukaj po tytule, firmie...">
         </div>
         <div class="results-actions">
-          <button id="btn-refine-prompt" class="btn btn-secondary" title="Generuj ulepszony prompt na podstawie Twoich preferencji">Ulepsz prompt</button>
+          <button id="btn-refine-prompt" class="btn btn-accent" title="Generuj ulepszony prompt na podstawie Twoich preferencji">
+            <span class="btn-icon">&#128640;</span> Ulepsz prompt
+          </button>
         </div>
       </div>
 
       <div id="results-container" class="cards-grid">
         <div class="empty-state">
-          <p>Brak wynikow. Przejdz do zakladki "Szukaj" i wygeneruj prompt.</p>
+          <div class="empty-state-icon">&#128203;</div>
+          <h3>Brak wynikow</h3>
+          <p>Przejdz do zakladki "Szukaj" i wygeneruj pierwszy prompt.</p>
         </div>
       </div>
     </section>
 
     <!-- Tab: Sledzenie -->
     <section id="tab-tracker" class="tab-panel" hidden>
+      <div class="tab-header">
+        <h2 class="tab-title">&#128200; Sledzenie aplikacji</h2>
+        <p class="tab-description">Dashboard Twoich aplikacji. Kliknij oferte zeby rozwinac szczegoly.</p>
+      </div>
+
       <div class="stats-bar">
         <div class="stat-card">
           <span class="stat-number" id="stat-total">0</span>
@@ -244,20 +352,29 @@
           <option value="offer">Oferta</option>
           <option value="rejected">Odrzucona</option>
         </select>
-        <input type="text" id="tracker-search" class="filter-input" placeholder="Szukaj...">
+        <input type="text" id="tracker-search" class="filter-input" placeholder="&#128269; Szukaj...">
       </div>
 
       <div id="tracker-list" class="tracker-table">
         <div class="empty-state">
-          <p>Brak sledzonych aplikacji. Zaznacz oferty w zakladce "Wyniki".</p>
+          <div class="empty-state-icon">&#128200;</div>
+          <h3>Brak sledzonych aplikacji</h3>
+          <p>Zaznacz oferty w zakladce "Wyniki" aby zaczac sledzenie.</p>
         </div>
       </div>
     </section>
 
     <!-- Tab: Email -->
     <section id="tab-email" class="tab-panel" hidden>
+      <div class="tab-header">
+        <h2 class="tab-title">&#9993; Generator emaili</h2>
+        <p class="tab-description">Wygeneruj spersonalizowany email aplikacyjny z technikami perswazji.</p>
+      </div>
+
       <div class="panel">
-        <h2 class="panel-title">Wybierz oferte</h2>
+        <div class="panel-header">
+          <h3 class="panel-title">Wybierz oferte</h3>
+        </div>
         <select id="email-job-select" class="filter-select filter-select-lg">
           <option value="">-- Wybierz oferte do aplikowania --</option>
         </select>
@@ -265,31 +382,52 @@
       </div>
 
       <div class="panel">
-        <h2 class="panel-title">Dodatkowe informacje o firmie (opcjonalne)</h2>
-        <textarea id="email-company-info" class="prompt-textarea" rows="4" placeholder="Wklej tutaj informacje o firmie ze strony internetowej, np. misja, wartosci, ostatnie projekty..."></textarea>
+        <div class="panel-header">
+          <h3 class="panel-title">Dodatkowe informacje o firmie <span class="label-hint">(opcjonalne)</span></h3>
+        </div>
+        <div class="prompt-help">
+          Wklej informacje ze strony firmy — misja, wartosci, ostatnie projekty. System wykorzysta je do personalizacji emaila.
+        </div>
+        <textarea id="email-company-info" class="prompt-textarea" rows="4" placeholder="Np. firma prowadzi sprzedaz na rynkach wschodnich, specjalizuje sie w e-commerce..."></textarea>
       </div>
 
-      <div class="panel">
-        <button id="btn-generate-email-prompt" class="btn btn-primary" disabled>Generuj prompt do emaila</button>
+      <div class="form-footer">
+        <button id="btn-generate-email-prompt" class="btn btn-primary btn-lg" disabled>
+          <span class="btn-icon">&#9889;</span> Generuj prompt do emaila
+        </button>
       </div>
 
       <div id="email-prompt-section" class="panel" hidden>
-        <h2 class="panel-title">Prompt do emaila - skopiuj do Claude</h2>
-        <textarea id="email-prompt-output" class="prompt-textarea" readonly rows="12"></textarea>
-        <button id="btn-copy-email-prompt" class="btn btn-secondary">Kopiuj do schowka</button>
+        <div class="panel-header">
+          <h3 class="panel-title">Prompt do emaila — skopiuj do Claude</h3>
+        </div>
+        <textarea id="email-prompt-output" class="prompt-textarea" readonly rows="10"></textarea>
+        <div class="form-actions">
+          <button id="btn-copy-email-prompt" class="btn btn-secondary btn-lg">
+            <span class="btn-icon">&#128203;</span> Kopiuj do schowka
+          </button>
+        </div>
       </div>
 
       <div class="panel">
-        <h2 class="panel-title">Wklej wygenerowany email</h2>
-        <textarea id="email-draft-input" rows="10" placeholder="Wklej tutaj email wygenerowany przez Claude..."></textarea>
+        <div class="panel-header">
+          <h3 class="panel-title">Wklej wygenerowany email</h3>
+        </div>
+        <textarea id="email-draft-input" rows="8" placeholder="Wklej tutaj email wygenerowany przez Claude..."></textarea>
         <div class="form-actions">
-          <button id="btn-save-draft" class="btn btn-secondary" disabled>Zapisz draft</button>
-          <button id="btn-copy-email" class="btn btn-primary" disabled>Kopiuj email</button>
+          <button id="btn-save-draft" class="btn btn-secondary" disabled>
+            <span class="btn-icon">&#128190;</span> Zapisz draft
+          </button>
+          <button id="btn-copy-email" class="btn btn-primary" disabled>
+            <span class="btn-icon">&#128203;</span> Kopiuj email
+          </button>
         </div>
       </div>
 
       <div id="saved-drafts-section" class="panel" hidden>
-        <h2 class="panel-title">Zapisane drafty emaili</h2>
+        <div class="panel-header">
+          <h3 class="panel-title">&#128195; Zapisane drafty emaili</h3>
+        </div>
         <div id="saved-drafts-list"></div>
       </div>
     </section>

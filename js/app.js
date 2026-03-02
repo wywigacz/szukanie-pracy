@@ -75,14 +75,27 @@ function initSearchTab() {
   const parsePreview = document.getElementById('parse-preview');
   const btnRefine = document.getElementById('btn-refine-prompt');
 
+  function updateStepIndicators(activeStep) {
+    document.querySelectorAll('.step-dot').forEach(dot => {
+      const step = parseInt(dot.dataset.step);
+      dot.classList.remove('active', 'completed');
+      if (step < activeStep) dot.classList.add('completed');
+      if (step === activeStep) dot.classList.add('active');
+    });
+    document.querySelectorAll('.step-line').forEach((line, i) => {
+      line.classList.toggle('active', i + 1 < activeStep);
+    });
+  }
+
   function updateSearchState() {
     const profile = Storage.getProfile();
     const summaryEl = document.getElementById('search-prefs-summary');
     const prefs = Storage.getPreferences();
 
     if (!profile) {
-      summaryEl.textContent = 'Wypelnij profil aby wygenerowac prompt.';
+      summaryEl.innerHTML = '<p>Wypelnij profil aby wygenerowac prompt.</p>';
       btnGenerate.disabled = true;
+      updateStepIndicators(1);
       return;
     }
 
@@ -91,15 +104,15 @@ function initSearchTab() {
     const iterations = Storage.getIterations();
     const iterCount = iterations.length;
 
-    let text = `Profil: ${profile.name} | ${profile.currentRole || 'Brak stanowiska'}`;
+    let lines = [`<strong>${profile.name}</strong> &mdash; ${profile.currentRole || 'Profil gotowy'}`];
     if (iterCount > 0) {
-      text += ` | Iteracja ${iterCount + 1}`;
+      lines.push(`Nastepna iteracja: <strong>#${iterCount + 1}</strong>`);
     }
     if (negCount > 0 || posCount > 0) {
-      text += ` | Preferencje: ${negCount} negatywnych, ${posCount} pozytywnych`;
+      lines.push(`Preferencje: ${negCount} wykluczonych, ${posCount} preferowanych`);
     }
 
-    summaryEl.textContent = text;
+    summaryEl.innerHTML = lines.map(l => `<p>${l}</p>`).join('');
     btnGenerate.disabled = false;
 
     // Restore prompt from last pending iteration
@@ -107,6 +120,11 @@ function initSearchTab() {
     if (lastIter && lastIter.status === 'prompt_generated' && lastIter.promptText) {
       promptOutput.value = lastIter.promptText;
       promptSection.hidden = false;
+      updateStepIndicators(2);
+    } else if (lastIter && lastIter.status === 'completed') {
+      updateStepIndicators(1);
+    } else {
+      updateStepIndicators(1);
     }
   }
 
@@ -125,6 +143,7 @@ function initSearchTab() {
 
     promptOutput.value = prompt;
     promptSection.hidden = false;
+    updateStepIndicators(2);
 
     const iteration = {
       id: generateId('iter'),
@@ -140,11 +159,15 @@ function initSearchTab() {
     Storage.addIteration(iteration);
     updateIterationBadge();
     updateIterationsHistory();
-    Toast.show(`Prompt iteracji ${iterNumber} wygenerowany!`, 'success');
+    Toast.show(`Prompt iteracji ${iterNumber} wygenerowany! Skopiuj go i wklej do Claude.`, 'success');
+
+    // Scroll to prompt
+    promptSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
   });
 
   btnCopy.addEventListener('click', () => {
     copyToClipboard(promptOutput.value);
+    updateStepIndicators(3);
   });
 
   responseInput.addEventListener('input', () => {
@@ -237,6 +260,7 @@ function initSearchTab() {
       updateIterationBadge();
 
       window.location.hash = '#szukaj';
+      updateStepIndicators(2);
       Toast.show(`Ulepszony prompt iteracji ${iterNumber} wygenerowany!`, 'success');
     });
   }
@@ -583,12 +607,14 @@ document.addEventListener('DOMContentLoaded', () => {
   updateIterationsHistory();
   updateTrackerStats();
 
-  // Navigate to profile if no profile, else to search
+  // Navigate to appropriate tab
+  const currentHash = window.location.hash;
   if (!Storage.getProfile()) {
     window.location.hash = '#profil';
     Toast.show('Wypelnij profil przed rozpoczeciem wyszukiwania.', 'info');
-  } else {
-    handleRoute();
+  } else if (!currentHash || currentHash === '#profil') {
+    // If profile exists, default to search tab
+    window.location.hash = '#szukaj';
   }
 
   handleRoute();

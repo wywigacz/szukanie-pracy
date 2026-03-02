@@ -90,6 +90,11 @@ export const Storage = {
         if (!_data.preferences) _data.preferences = defaultState().preferences;
         if (!_data.jobs) _data.jobs = {};
         if (!_data.iterations) _data.iterations = [];
+        // Migration: fill default profile if missing
+        if (!_data.profile) {
+          _data.profile = defaultProfile();
+          save();
+        }
       } catch {
         _data = defaultState();
         save();
