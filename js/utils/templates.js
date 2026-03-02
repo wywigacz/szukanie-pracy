@@ -126,6 +126,7 @@ BEZWZGLEDNE WYKLUCZENIA (NIGDY nie pokazuj takich ofert):
 - Stanowiska "social media manager" lub "content creator" wymagajace tworzenia tresci od zera
 - Stanowiska wymagajace samodzielnego prowadzenia/zarzadzania sklepem, kanalem sprzedazowym, strategia sprzedazy, budzetem
 - Stanowiska "manager e-commerce", "kierownik sprzedazy", "lider zespolu" — kandydatka szuka wsparcia operacyjnego, nie zarzadzania
+- Stanowiska wymagajace samodzielnego zarzadzania sklepem internetowym (PrestaShop, IdoSell, Shoper, WooCommerce, Magento itp.) — kandydatka NIE zarzadza sklepem, moze jedynie dodawac produkty/aukcje i obslugiwac zamowienia w ramach istniejacego sklepu
 ${negativePrefText}
 ${positivePrefText}
 ${excludedCompanies}
@@ -134,7 +135,7 @@ To jest iteracja numer ${iterationNumber}.${iterationNumber > 1 ? ' Wczesniejsze
 
 INSTRUKCJE:
 1. Przeszukaj kazdy portal uzywajac ROZNYCH slow kluczowych: "obsluga zamowien zdalna", "asystentka zdalna", "rosyjski praca zdalna", "marketplace obsluga", "allegro obsluga zamowien", "wirtualna asystentka", "fotograf produktowy", "obsluga klienta zdalna", "listing produktow", "obsluga posprzedazowa", "fakturowanie zdalne", "koordynator zamowien zdalna" itp.
-2. Zwroc MINIMUM 15 ofert pracy (im wiecej, tym lepiej)
+2. Zwroc MINIMUM 50 ofert pracy (im wiecej, tym lepiej)
 3. TYLKO OFERTY Z 2026 ROKU — kazda oferta MUSI byc opublikowana w 2026 roku. Sprawdz date publikacji kazdej oferty. Nie podawaj ofert z 2025 roku ani starszych.
 4. SPRAWDZ AKTUALNOSC — dla kazdej oferty zweryfikuj czy jest nadal aktywna (nie wygasla, nie zamknieta). Jesli nie mozesz zweryfikowac — zaznacz to w opisie.
 5. Dla kazdej oferty podaj dane w DOKLADNIE tym formacie markdown:
@@ -163,7 +164,9 @@ POZOSTALE ZASADY:
 - ROZNORODNOSC — pokaz oferty z roznych branzy i o roznych stanowiskach
 - NIE pokazuj ofert napisanych po angielsku, wymagajacych angielskiego, ani takich gdzie angielski jest "mile widziany"
 - NIE pokazuj ofert wymagajacych Allegro Ads, Baselinkera, analizy danych lub samodzielnego tworzenia tresci marketingowych
-- NIE pokazuj ofert zarzadzania sklepem/sprzedaza — kandydatka szuka WSPARCIA OPERACYJNEGO`;
+- NIE pokazuj ofert zarzadzania sklepem/sprzedaza — kandydatka szuka WSPARCIA OPERACYJNEGO
+
+ZWROC WYLACZNIE LISTE OFERT w podanym formacie. Bez wstepu, bez komentarza, bez podsumowania, bez dodatkowych uwag — TYLKO oferty oddzielone linia "---". Pierwsza oferta zaczyna sie od razu od "## [Tytul stanowiska]".`;
 }
 
 export function buildEmailPromptText(profile, job, companyContext) {
