@@ -72,7 +72,7 @@ export function buildSearchPromptText(profile, preferences, iterationNumber) {
     ? `\nDODATKOWY KONTEKST O KANDYDACIE:\n${profile.cvSummary}`
     : '';
 
-  return `Jestes ekspertem od rynku pracy w Polsce. Twoim zadaniem jest znalezienie ofert pracy WYLACZNIE ZDALNEJ dla kandydatki o wszechstronnym doswiadczeniu: e-commerce, administracja biurowa, handel miedzynarodowy (rynki wschodnie), fotografia i jezyk rosyjski.
+  return `Jestes ekspertem od rynku pracy w Polsce. Twoim zadaniem jest znalezienie ofert pracy WYLACZNIE ZDALNEJ dla kandydatki o wszechstronnym doswiadczeniu: operacyjna obsluga e-commerce, administracja biurowa, handel miedzynarodowy (rynki wschodnie), fotografia i jezyk rosyjski. Kandydatka mieszka na stale w Azji (Wietnam, niedlugo Tajwan) — szuka pracy zdalnej dla polskich firm.
 
 Przeszukaj WSZYSTKIE ponizsze portale:
 ${sitesList}
@@ -84,6 +84,7 @@ ${roleText}
 ${languagesText}
 ${skillsText}
 ${educationText}
+- Lokalizacja: Wietnam (niedlugo Tajwan) — praca zdalna na rzecz polskich firm
 - Tryb pracy: WYLACZNIE PRACA ZDALNA (lokalizacja nie ma znaczenia)
 - Typ umowy: ${CONTRACT_LABELS[profile.preferredContractType] || 'Dowolny'}
 ${salaryText}
@@ -91,42 +92,46 @@ ${profile.linkedinUrl ? `- LinkedIn: ${profile.linkedinUrl}` : ''}
 ${cvText}
 
 KLUCZOWE ATUTY KANDYDATKI (uwzglednij przy wyszukiwaniu):
-1. E-COMMERCE (5 lat) - prowadzenie wlasnego sklepu (Shoper), Super Sprzedawca Allegro (100-300 zamowien/mies.), Etsy (rynki miedzynarodowe), IdoSell, Dawanda, Pakamera. Szukaj: specjalista e-commerce, marketplace manager, obsluga zamowien, koordynator sprzedazy online
-2. ADMINISTRACJA BIUROWA (2 lata) - fakturowanie (Optima, SubiektGT), obsluga biura, dokumentacja, delegacje, kalendarz. Szukaj: asystentka zdalna, wirtualna asystentka, office manager zdalny, administrator dokumentow
-3. HANDEL MIEDZYNARODOWY / ROSYJSKI (7 lat) - eksport na Ukraine, Rosje, Bialorus, kraje baltyckie. Targi w Kijowie, Minsku, Moskwie. Kontrakty zagraniczne, przychod 1+ mln zl/rok. Szukaj: koordynator eksportu, obsluga klienta rosyjskojezycznego, rynki wschodnie
-4. JEZYK ROSYJSKI zaawansowany - komunikacja biznesowa, obsluga klientow rosyjskojezycznych, korespondencja handlowa. Szukaj: obsluga klienta rosyjskojezycznego, koordynator rynkow wschodnich, moderator rosyjskojezyczny
-5. FOTOGRAFIA (nagradzana) - TOP20 Huawei Next Image, wygrane konkursy. Fotografia produktowa i reportazowa. Szukaj: fotograf produktowy zdalny, obrobka zdjec, content creator
-6. SOCIAL MEDIA i CONTENT - prowadzenie mediow spolecznosciowych, zdjecia produktowe, analiza rynku. Szukaj: social media manager, content manager, copywriter
-7. MS Excel (tabele przestawne), PowerPoint, systemy ERP (Optima, SubiektGT, IdoSell)
+1. OPERACYJNA OBSLUGA E-COMMERCE (5 lat) — Super Sprzedawca Allegro (100-300 zamowien/mies.), Etsy, Shoper, IdoSell, Dawanda, Pakamera. Kompetencje OPERACYJNE: wystawianie ofert/aukcji, listing produktow, zarzadzanie zamowieniami, pakowanie, wysylka, obsluga klienta (w tym posprzedazowa). UWAGA: NIE zna sie na Allegro Ads, NIE prowadzi kampanii, NIE zajmuje sie analityka danych, NIE prowadzi kanalu sprzedazowego strategicznie. Szukaj: obsluga zamowien, asystent marketplace, listing produktow, obsluga aukcji Allegro
+2. ADMINISTRACJA BIUROWA (2 lata) — fakturowanie (Optima, SubiektGT), obsluga biura, dokumentacja, delegacje, kalendarz. Szukaj: asystentka zdalna, wirtualna asystentka, office manager zdalny, administrator dokumentow
+3. HANDEL MIEDZYNARODOWY / ROSYJSKI (7 lat) — eksport na Ukraine, Rosje, Bialorus, kraje baltyckie. Targi w Kijowie, Minsku, Moskwie. Kontrakty zagraniczne, przychod 1+ mln zl/rok. Szukaj: koordynator eksportu, obsluga klienta rosyjskojezycznego, rynki wschodnie
+4. JEZYK ROSYJSKI zaawansowany — komunikacja biznesowa, obsluga klientow rosyjskojezycznych, korespondencja handlowa. Szukaj: obsluga klienta rosyjskojezycznego, koordynator rynkow wschodnich, moderator rosyjskojezyczny
+5. FOTOGRAFIA (nagradzana, bardzo dobra) — TOP20 Huawei Next Image (sposrod 600 tys. zgloszen), wygrane konkursy. Fotografia produktowa i reportazowa. ATUT: mieszka w Wietnamie/Tajwanie — moze robic sesje zdjeciowe na miejscu w Azji. Szukaj: fotograf produktowy zdalny, fotograf w Azji, sesje zdjeciowe Azja
+6. MS Excel (tabele przestawne), PowerPoint, systemy ERP (Optima, SubiektGT, IdoSell)
 
 Mozliwe kierunki poszukiwan (szukaj WSZYSTKICH):
-- Specjalista/koordynator e-commerce, marketplace specialist
+- Obsluga zamowien, asystent marketplace, listing aukcji
 - Wirtualna asystentka, asystent zdalny
-- Obsluga klienta (szczegolnie rosyjskojezycznego)
+- Obsluga klienta (szczegolnie rosyjskojezycznego, ale tez ogolnie)
 - Administrator, koordynator biurowy zdalny
-- Obsluga klienta rosyjskojezycznego, koordynator rynkow wschodnich
-- Content creator, social media manager, copywriter
-- Fotograf produktowy, obrobka zdjec
+- Koordynator rynkow wschodnich, obsluga klientow rosyjskojezycznych
+- Fotograf produktowy, fotograf w Azji, sesje zdjeciowe na zlecenie
 - Koordynator projektow, koordynator zamowien
 - Data entry, wprowadzanie danych
-- Moderator tresci
+- Moderator tresci (nie tworzenie tresci marketingowych!)
 - Rekrutacja na rynki wschodnie
 - Specjalista ds. eksportu (zdalnie)
+- Obsluga posprzedazowa, zwroty, reklamacje
 
 BEZWZGLEDNE WYKLUCZENIA (NIGDY nie pokazuj takich ofert):
-- Praca stacjonarna lub hybrydowa - TYLKO praca w pelni zdalna
+- Praca stacjonarna lub hybrydowa — TYLKO praca w pelni zdalna
 - Stanowiska wymagajace pozyskiwania nowych klientow, cold callingu, sprzedazy aktywnej, telemarketingu, akwizycji
 - Stanowiska wymagajace bieglego angielskiego (kandydatka zna angielski tylko podstawowo)
 - Stanowiska programistyczne/developerskie
-- Stanowiska tlumacza / tlumaczenia jako glowne obowiazki (rosyjski jest atutem dodatkowym, nie zawodem)
+- Stanowiska tlumacza / tlumaczenia jako glowne obowiazki
+- Stanowiska wymagajace Allegro Ads, Google Ads, Facebook Ads lub jakichkolwiek kampanii reklamowych
+- Stanowiska wymagajace analizy danych, raportowania analitycznego, BI
+- Stanowiska wymagajace samodzielnego tworzenia materialow marketingowych (copywriting, teksty marketingowe, produkcja wideo)
+- Stanowiska "social media manager" lub "content creator" wymagajace tworzenia tresci od zera
+- Stanowiska wymagajace samodzielnego prowadzenia kanalu sprzedazowego (strategia, budzet, kampanie)
 ${negativePrefText}
 ${positivePrefText}
 ${excludedCompanies}
 
-To jest iteracja numer ${iterationNumber}.${iterationNumber > 1 ? ' Wczesniejsze iteracje juz przeszukaly czesc ofert - szukaj NOWYCH ofert, ktore nie byly wczesniej prezentowane. Badz kreatywna w wyszukiwaniu - probuj nowych slow kluczowych i kombinacji.' : ''}
+To jest iteracja numer ${iterationNumber}.${iterationNumber > 1 ? ' Wczesniejsze iteracje juz przeszukaly czesc ofert — szukaj NOWYCH ofert, ktore nie byly wczesniej prezentowane. Badz kreatywna w wyszukiwaniu — probuj nowych slow kluczowych i kombinacji.' : ''}
 
 INSTRUKCJE:
-1. Przeszukaj kazdy portal uzywajac ROZNYCH slow kluczowych: "e-commerce zdalna", "rosyjski", "asystentka zdalna", "obsluga zamowien", "marketplace", "allegro", "administrator zdalny", "social media", "content", "koordynator", "fotograf produktowy", "virtual assistant", "obsluga klienta zdalna" itp.
+1. Przeszukaj kazdy portal uzywajac ROZNYCH slow kluczowych: "obsluga zamowien zdalna", "asystentka zdalna", "rosyjski", "marketplace", "allegro obsluga", "administrator zdalny", "koordynator", "fotograf produktowy", "virtual assistant", "obsluga klienta zdalna", "listing produktow", "obsluga posprzedazowa" itp.
 2. Zwroc MINIMUM 15 ofert pracy (im wiecej, tym lepiej)
 3. Dla kazdej oferty podaj dane w DOKLADNIE tym formacie markdown:
 
@@ -141,13 +146,18 @@ INSTRUKCJE:
 
 ---
 
-WAZNE:
+KRYTYCZNE ZASADY DOTYCZACE LINKOW:
+- Kazdy link MUSI prowadzic do KONKRETNEJ oferty pracy (np. https://www.pracuj.pl/praca/asystentka-zdalna-firma-xyz,oferta,12345678)
+- NIGDY nie podawaj linkow ogolnych do wyszukiwarki (np. https://pl.jooble.org/praca-zdalna-rosyjski, https://www.pracuj.pl/praca/zdalnie)
+- Jesli nie mozesz znalezc bezposredniego linku do oferty — podaj dokladna nazwe oferty i firmy, abym mogla ja znalezc recznie, ale NIE podawaj linku ogolnego
+
+POZOSTALE ZASADY:
 - Kazda oferta MUSI byc oddzielona linia "---"
 - Podawaj PRAWDZIWE, aktualne linki do ofert
-- Priorytetyzuj oferty gdzie doswiadczenie e-commerce, jezyk rosyjski lub administracja sa atutem
-- ROZNORODNOSC - pokaz oferty z roznych branzy i o roznych stanowiskach
+- Priorytetyzuj oferty gdzie operacyjne doswiadczenie e-commerce, jezyk rosyjski lub administracja sa atutem
+- ROZNORODNOSC — pokaz oferty z roznych branzy i o roznych stanowiskach
 - Jesli oferta jest po angielsku, przetlumacz opis na polski
-- Nie pokazuj ofert wymagajacych bieglego angielskiego lub programowania`;
+- Nie pokazuj ofert wymagajacych bieglego angielskiego, programowania, Allegro Ads lub samodzielnego tworzenia tresci marketingowych`;
 }
 
 export function buildEmailPromptText(profile, job, companyContext) {
@@ -172,12 +182,12 @@ PROFIL KANDYDATA:
 ${profile.cvSummary || 'Brak podsumowania'}
 
 TECHNIKI PERSWAZJI DO ZASTOSOWANIA:
-1. **Wspolny grunt**: Znajdz powiazania miedzy kandydatem a firma. Jesli firma dziala na rynkach wschodnich (Rosja, Ukraina, Bialorus, Kazachstan) - podkresz biegla znajomosc rosyjskiego. Jesli firma ceni roznorodnosc jezykowa - podkresz profil filologiczny. Jesli firma jest z Trojmiasta/Pomorza - wspomnij o zwiazku z regionem (UG).
-2. **Konkretne osiagniecia firmy**: Wymien konkretne sukcesy lub projekty firmy i pokaz, jak kompetencje jezykowe i humanistyczne kandydata moga je wspierac (np. ekspansja na rynki wschodnie, obsluga klientow rosyjskojezycznych, tlumaczenia dokumentacji).
-3. **Zasada wzajemnosci**: Zaproponuj konkretna wartosc - np. "moge pomoc w lokalizacji produktu na rynek rosyjskojezyczny" lub "moge przejac komunikacje z partnerami ze Wschodu".
-4. **Dowod spoleczny**: Nawiaz do wyksztalcenia filologicznego (mgr, Uniwersytet Gdanski) jako gwarancji jakosci jezykowej i dbania o szczegoly.
-5. **Storytelling**: Wplec krotka historie zwiazana z pasja do jezykow i kultur, ktora pokazuje kompetencje i zaangazowanie kandydata.
-6. **Call to action**: Zakoncz konkretna propozycja rozmowy online (bo praca zdalna) z sugestia terminu.
+1. **Wspolny grunt**: Znajdz powiazania miedzy kandydatka a firma. Jesli firma dziala na rynkach wschodnich — podkresz biegla znajomosc rosyjskiego. Jesli firma jest z Trojmiasta/Pomorza — wspomnij o zwiazku z regionem (UG). Jesli firma dziala w Azji — podkresz fakt mieszkania w Wietnamie/Tajwanie.
+2. **Konkretne osiagniecia firmy**: Wymien konkretne sukcesy lub projekty firmy i pokaz, jak kompetencje kandydatki moga je wspierac (np. obsluga zamowien przy skalowaniu, obsluga klientow rosyjskojezycznych, wsparcie operacyjne e-commerce).
+3. **Zasada wzajemnosci**: Zaproponuj konkretna wartosc — np. "moge przejac operacyjna obsluge zamowien" lub "moge przejac komunikacje z klientami rosyjskojezycznymi" lub "moge robic sesje zdjeciowe produktow na miejscu w Azji".
+4. **Dowod spoleczny**: Nawiaz do statusu Super Sprzedawcy Allegro (100-300 zamowien/mies.) jako dowodu operacyjnej sprawnosci. Przy fotografii — TOP20 Huawei Next Image (600 tys. zgloszen).
+5. **Storytelling**: Wplec krotka historie pokazujaca wielokulturowe doswiadczenie — od Gdanska, przez Azje, po rynki wschodnie.
+6. **Call to action**: Zakoncz konkretna propozycja rozmowy online (bo praca zdalna) z sugestia terminu. Wspomnij o strefie czasowej (Azja — UTC+7/+8).
 
 WYMAGANIA FORMATU:
 - Email w jezyku polskim
