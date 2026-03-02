@@ -72,7 +72,9 @@ export function buildSearchPromptText(profile, preferences, iterationNumber) {
     ? `\nDODATKOWY KONTEKST O KANDYDACIE:\n${profile.cvSummary}`
     : '';
 
-  return `Jestes ekspertem od rynku pracy w Polsce. Twoim zadaniem jest znalezienie ofert pracy WYLACZNIE ZDALNEJ dla kandydatki o wszechstronnym doswiadczeniu: operacyjna obsluga e-commerce, administracja biurowa, handel miedzynarodowy (rynki wschodnie), fotografia i jezyk rosyjski. Kandydatka mieszka na stale w Azji (Wietnam, niedlugo Tajwan) — szuka pracy zdalnej dla polskich firm.
+  return `Jestes ekspertem od rynku pracy w Polsce. Twoim zadaniem jest znalezienie ofert pracy WYLACZNIE ZDALNEJ dla kandydatki o doswiadczeniu w operacyjnej obsludze e-commerce, administracji biurowej, handlu miedzynarodowym (rynki wschodnie), fotografii i jezyku rosyjskim. Kandydatka mieszka na stale w Azji (Wietnam, niedlugo Tajwan) — szuka pracy zdalnej dla polskich firm.
+
+WAZNE: Kandydatka NIE zarzadza sklepem ani sprzedaza. Jej kompetencje to WSPARCIE OPERACYJNE — dodawanie aukcji, obsluga zamowien, obsluga klienta. Nie sugeruj stanowisk typu "manager e-commerce", "kierownik sprzedazy" itp.
 
 Przeszukaj WSZYSTKIE ponizsze portale:
 ${sitesList}
@@ -92,9 +94,9 @@ ${profile.linkedinUrl ? `- LinkedIn: ${profile.linkedinUrl}` : ''}
 ${cvText}
 
 KLUCZOWE ATUTY KANDYDATKI (uwzglednij przy wyszukiwaniu):
-1. OPERACYJNA OBSLUGA E-COMMERCE (5 lat) — Super Sprzedawca Allegro (100-300 zamowien/mies.), Etsy, Shoper, IdoSell, Dawanda, Pakamera. Kompetencje OPERACYJNE: wystawianie ofert/aukcji, listing produktow, zarzadzanie zamowieniami, pakowanie, wysylka, obsluga klienta (w tym posprzedazowa). UWAGA: NIE zna sie na Allegro Ads, NIE prowadzi kampanii, NIE zajmuje sie analityka danych, NIE prowadzi kanalu sprzedazowego strategicznie. Szukaj: obsluga zamowien, asystent marketplace, listing produktow, obsluga aukcji Allegro
+1. OPERACYJNE WSPARCIE E-COMMERCE (5 lat) — Super Sprzedawca Allegro (100-300 zamowien/mies.), Etsy, Shoper, IdoSell, Pakamera. Kompetencje WYLACZNIE OPERACYJNE: dodawanie aukcji/ofert, listing produktow, zarzadzanie zamowieniami, wysylka, obsluga klienta (w tym posprzedazowa: zwroty, reklamacje). UWAGA: NIE zarzadza sklepem, NIE prowadzi sprzedazy, NIE zna Allegro Ads, Baselinkera, NIE prowadzi kampanii, NIE analizuje danych. Szukaj: obsluga zamowien, asystent marketplace, listing produktow, obsluga aukcji
 2. ADMINISTRACJA BIUROWA (2 lata) — fakturowanie (Optima, SubiektGT), obsluga biura, dokumentacja, delegacje, kalendarz. Szukaj: asystentka zdalna, wirtualna asystentka, office manager zdalny, administrator dokumentow
-3. HANDEL MIEDZYNARODOWY / ROSYJSKI (7 lat) — eksport na Ukraine, Rosje, Bialorus, kraje baltyckie. Targi w Kijowie, Minsku, Moskwie. Kontrakty zagraniczne, przychod 1+ mln zl/rok. Szukaj: koordynator eksportu, obsluga klienta rosyjskojezycznego, rynki wschodnie
+3. HANDEL MIEDZYNARODOWY / ROSYJSKI (7 lat) — eksport na Ukraine, Rosje, Bialorus, kraje baltyckie. Kontrakty zagraniczne, przychod 1+ mln zl/rok. Szukaj: koordynator eksportu, obsluga klienta rosyjskojezycznego, rynki wschodnie
 4. JEZYK ROSYJSKI zaawansowany — komunikacja biznesowa, obsluga klientow rosyjskojezycznych, korespondencja handlowa. Szukaj: obsluga klienta rosyjskojezycznego, koordynator rynkow wschodnich, moderator rosyjskojezyczny
 5. FOTOGRAFIA (nagradzana, bardzo dobra) — TOP20 Huawei Next Image (sposrod 600 tys. zgloszen), wygrane konkursy. Fotografia produktowa i reportazowa. ATUT: mieszka w Wietnamie/Tajwanie — moze robic sesje zdjeciowe na miejscu w Azji. Szukaj: fotograf produktowy zdalny, fotograf w Azji, sesje zdjeciowe Azja
 6. MS Excel (tabele przestawne), PowerPoint, systemy ERP (Optima, SubiektGT, IdoSell)
@@ -102,28 +104,28 @@ KLUCZOWE ATUTY KANDYDATKI (uwzglednij przy wyszukiwaniu):
 Mozliwe kierunki poszukiwan (szukaj WSZYSTKICH):
 - Obsluga zamowien, asystent marketplace, listing aukcji
 - Wirtualna asystentka, asystent zdalny
-- Obsluga klienta (szczegolnie rosyjskojezycznego, ale tez ogolnie)
-- Administrator, koordynator biurowy zdalny
+- Obsluga klienta (szczegolnie rosyjskojezycznego, ale tez ogolnie — POLSKOJEZYCZNA)
 - Koordynator rynkow wschodnich, obsluga klientow rosyjskojezycznych
 - Fotograf produktowy, fotograf w Azji, sesje zdjeciowe na zlecenie
-- Koordynator projektow, koordynator zamowien
+- Koordynator zamowien, koordynator logistyki zdalny
 - Data entry, wprowadzanie danych
 - Moderator tresci (nie tworzenie tresci marketingowych!)
-- Rekrutacja na rynki wschodnie
 - Specjalista ds. eksportu (zdalnie)
 - Obsluga posprzedazowa, zwroty, reklamacje
+- Fakturowanie zdalne, obsluga dokumentow
 
 BEZWZGLEDNE WYKLUCZENIA (NIGDY nie pokazuj takich ofert):
-- Praca stacjonarna lub hybrydowa — TYLKO praca w pelni zdalna
+- Praca stacjonarna lub hybrydowa — TYLKO praca w 100% zdalna. LOGIKA: uzyj zdrowego rozsadku! "Koordynator biura", "recepcjonista", "asystent biura" to z natury praca stacjonarna nawet jesli oferta nie pisze tego wprost — NIE pokazuj takich ofert. Pokazuj TYLKO oferty gdzie jest WYRAZNIE napisane "praca zdalna" / "remote" / "100% zdalnie"
+- Stanowiska wymagajace JAKIEGOKOLWIEK angielskiego — nawet podstawowego, nawet "mile widziany". Kandydatka NIE zna angielskiego na poziomie uzytecznym zawodowo. Jezeli oferta jest napisana po angielsku — OMIN JA
 - Stanowiska wymagajace pozyskiwania nowych klientow, cold callingu, sprzedazy aktywnej, telemarketingu, akwizycji
-- Stanowiska wymagajace bieglego angielskiego (kandydatka zna angielski tylko podstawowo)
 - Stanowiska programistyczne/developerskie
 - Stanowiska tlumacza / tlumaczenia jako glowne obowiazki
-- Stanowiska wymagajace Allegro Ads, Google Ads, Facebook Ads lub jakichkolwiek kampanii reklamowych
+- Stanowiska wymagajace Allegro Ads, Baselinkera, Google Ads, Facebook Ads lub jakichkolwiek kampanii reklamowych
 - Stanowiska wymagajace analizy danych, raportowania analitycznego, BI
 - Stanowiska wymagajace samodzielnego tworzenia materialow marketingowych (copywriting, teksty marketingowe, produkcja wideo)
 - Stanowiska "social media manager" lub "content creator" wymagajace tworzenia tresci od zera
-- Stanowiska wymagajace samodzielnego prowadzenia kanalu sprzedazowego (strategia, budzet, kampanie)
+- Stanowiska wymagajace samodzielnego prowadzenia/zarzadzania sklepem, kanalem sprzedazowym, strategia sprzedazy, budzetem
+- Stanowiska "manager e-commerce", "kierownik sprzedazy", "lider zespolu" — kandydatka szuka wsparcia operacyjnego, nie zarzadzania
 ${negativePrefText}
 ${positivePrefText}
 ${excludedCompanies}
@@ -131,9 +133,11 @@ ${excludedCompanies}
 To jest iteracja numer ${iterationNumber}.${iterationNumber > 1 ? ' Wczesniejsze iteracje juz przeszukaly czesc ofert — szukaj NOWYCH ofert, ktore nie byly wczesniej prezentowane. Badz kreatywna w wyszukiwaniu — probuj nowych slow kluczowych i kombinacji.' : ''}
 
 INSTRUKCJE:
-1. Przeszukaj kazdy portal uzywajac ROZNYCH slow kluczowych: "obsluga zamowien zdalna", "asystentka zdalna", "rosyjski", "marketplace", "allegro obsluga", "administrator zdalny", "koordynator", "fotograf produktowy", "virtual assistant", "obsluga klienta zdalna", "listing produktow", "obsluga posprzedazowa" itp.
+1. Przeszukaj kazdy portal uzywajac ROZNYCH slow kluczowych: "obsluga zamowien zdalna", "asystentka zdalna", "rosyjski praca zdalna", "marketplace obsluga", "allegro obsluga zamowien", "wirtualna asystentka", "fotograf produktowy", "obsluga klienta zdalna", "listing produktow", "obsluga posprzedazowa", "fakturowanie zdalne", "koordynator zamowien zdalna" itp.
 2. Zwroc MINIMUM 15 ofert pracy (im wiecej, tym lepiej)
-3. Dla kazdej oferty podaj dane w DOKLADNIE tym formacie markdown:
+3. TYLKO OFERTY Z 2026 ROKU — kazda oferta MUSI byc opublikowana w 2026 roku. Sprawdz date publikacji kazdej oferty. Nie podawaj ofert z 2025 roku ani starszych.
+4. SPRAWDZ AKTUALNOSC — dla kazdej oferty zweryfikuj czy jest nadal aktywna (nie wygasla, nie zamknieta). Jesli nie mozesz zweryfikowac — zaznacz to w opisie.
+5. Dla kazdej oferty podaj dane w DOKLADNIE tym formacie markdown:
 
 ## [Tytul stanowiska]
 - **Firma**: [Nazwa firmy]
@@ -142,22 +146,24 @@ INSTRUKCJE:
 - **Wynagrodzenie**: [Widelki lub "Nie podano"]
 - **Zrodlo**: [Nazwa portalu]
 - **Link**: [URL do ogloszenia]
+- **Data publikacji**: [Data publikacji oferty — MUSI byc z 2026 roku]
 - **Opis**: [2-3 zdania opisujace stanowisko i wymagania]
 
 ---
 
 KRYTYCZNE ZASADY DOTYCZACE LINKOW:
 - Kazdy link MUSI prowadzic do KONKRETNEJ oferty pracy (np. https://www.pracuj.pl/praca/asystentka-zdalna-firma-xyz,oferta,12345678)
-- NIGDY nie podawaj linkow ogolnych do wyszukiwarki (np. https://pl.jooble.org/praca-zdalna-rosyjski, https://www.pracuj.pl/praca/zdalnie)
-- Jesli nie mozesz znalezc bezposredniego linku do oferty — podaj dokladna nazwe oferty i firmy, abym mogla ja znalezc recznie, ale NIE podawaj linku ogolnego
+- NIGDY nie podawaj linkow ogolnych do wyszukiwarki (np. https://pl.jooble.org/praca-zdalna-rosyjski, https://www.pracuj.pl/praca/zdalnie) — to sa BEZUZYTECZNE linki do dalszego szukania, a nie do ofert
+- Jesli nie mozesz znalezc bezposredniego linku do oferty — podaj dokladna nazwe oferty, firme i portal, abym mogla ja znalezc recznie, ale NIE podawaj linku ogolnego
 
 POZOSTALE ZASADY:
 - Kazda oferta MUSI byc oddzielona linia "---"
-- Podawaj PRAWDZIWE, aktualne linki do ofert
+- Podawaj PRAWDZIWE, aktualne linki do ofert Z 2026 ROKU
 - Priorytetyzuj oferty gdzie operacyjne doswiadczenie e-commerce, jezyk rosyjski lub administracja sa atutem
 - ROZNORODNOSC — pokaz oferty z roznych branzy i o roznych stanowiskach
-- Jesli oferta jest po angielsku, przetlumacz opis na polski
-- Nie pokazuj ofert wymagajacych bieglego angielskiego, programowania, Allegro Ads lub samodzielnego tworzenia tresci marketingowych`;
+- NIE pokazuj ofert napisanych po angielsku, wymagajacych angielskiego, ani takich gdzie angielski jest "mile widziany"
+- NIE pokazuj ofert wymagajacych Allegro Ads, Baselinkera, analizy danych lub samodzielnego tworzenia tresci marketingowych
+- NIE pokazuj ofert zarzadzania sklepem/sprzedaza — kandydatka szuka WSPARCIA OPERACYJNEGO`;
 }
 
 export function buildEmailPromptText(profile, job, companyContext) {

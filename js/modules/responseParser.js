@@ -35,6 +35,9 @@ function parseJobSection(section, iterationId) {
     url = url.replace(/[\]>)]+$/, '');
   }
 
+  const publishedDate = extractField(section, /\*\*Data publikacji\*\*[:\s]*(.+)/)
+    || extractField(section, /Data publikacji[:\s]+(.+)/i);
+
   const description = extractField(section, /\*\*Opis\*\*[:\s]*([\s\S]+?)(?=\n\s*$|\n-\s*\*\*|$)/)
     || extractField(section, /Opis[:\s]+([\s\S]+?)(?=\n\s*$|\n-\s*\*\*|$)/i);
 
@@ -48,6 +51,7 @@ function parseJobSection(section, iterationId) {
     salary: cleanText(salary),
     url: url || null,
     source: cleanText(source),
+    publishedDate: cleanText(publishedDate),
     description: cleanText(description),
     status: 'new',
     notInterestedReason: null,

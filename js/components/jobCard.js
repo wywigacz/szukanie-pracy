@@ -39,6 +39,7 @@ export function renderJobCard(job) {
         ${job.salary ? `<span>${escapeHtml(job.salary)}</span>` : ''}
         ${job.workMode ? `<span>${escapeHtml(job.workMode)}</span>` : ''}
         ${job.source ? `<span class="job-card-source">${escapeHtml(job.source)}</span>` : ''}
+        ${job.publishedDate ? `<span>${escapeHtml(job.publishedDate)}</span>` : ''}
       </div>
       ${job.description ? `<div class="job-card-description">${escapeHtml(job.description)}</div>` : ''}
       <div class="job-card-actions">

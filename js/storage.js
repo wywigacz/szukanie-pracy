@@ -7,7 +7,7 @@ function defaultProfile() {
     email: '',
     phone: '',
     location: 'Wietnam (niedlugo Tajwan) — praca zdalna',
-    currentRole: 'Obsluga e-commerce / Handel miedzynarodowy / Administracja biurowa',
+    currentRole: 'Operacyjna obsluga e-commerce / Administracja / Fotografia',
     experienceYears: 14,
     skills: [
       'Allegro (Super Sprzedawca — obsluga aukcji i zamowien)',
@@ -32,21 +32,21 @@ function defaultProfile() {
       'Angielski (podstawowy)'
     ],
     education: 'Magister filologii rosyjskiej, Uniwersytet Gdanski',
-    cvSummary: `14 lat doswiadczenia zawodowego w 3 glownych obszarach. Mieszkam na stale w Azji Poludniowo-Wschodniej (Wietnam, niedlugo Tajwan).
+    cvSummary: `14 lat doswiadczenia zawodowego. Mieszkam na stale w Azji Poludniowo-Wschodniej (Wietnam, niedlugo Tajwan). NIE zarzadzam calym sklepem ani sprzedaza — moje kompetencje to wsparcie operacyjne.
 
-E-COMMERCE (2017-2022, 5 lat): Wlascicielka sklepu Hygge Macrame (Shoper) — recznie robiona bizuteria i dekoracje makramowe. Super Sprzedawca na Allegro (100-300 zamowien miesiecznie). Sprzedaz na Etsy (rynki miedzynarodowe), Dawanda, Pakamera. Moje kompetencje e-commerce to strona OPERACYJNA: wystawianie ofert/aukcji, zarzadzanie zamowieniami, pakowanie, wysylka, obsluga klienta (w tym posprzedazowa). NIE zajmuje sie: Allegro Ads, kampaniami reklamowymi, analityka danych, prowadzeniem kanalu sprzedazowego ani tworzeniem materialow marketingowych (teksty, wideo).
+E-COMMERCE (2017-2022, 5 lat): Wlascicielka sklepu Hygge Macrame (Shoper) — recznie robiona bizuteria i dekoracje makramowe. Super Sprzedawca na Allegro (100-300 zamowien miesiecznie). Sprzedaz na Etsy (rynki miedzynarodowe), Dawanda, Pakamera. Moje kompetencje e-commerce to WYLACZNIE strona OPERACYJNA: wystawianie ofert/aukcji, zarzadzanie zamowieniami, pakowanie, wysylka, obsluga klienta (w tym posprzedazowa). NIE zajmuje sie: Allegro Ads, Baselinkerem, kampaniami reklamowymi, analityka danych, prowadzeniem/zarzadzaniem sklepem/sprzedaza, strategia kanalu sprzedazowego, tworzeniem materialow marketingowych (teksty, wideo).
 
 ADMINISTRACJA BIUROWA (2015-2017, 2 lata): DDS Poland Sp. z o.o. — Specjalista ds. administracji. Fakturowanie w systemie Optima, obsluga biura, rozliczanie delegacji, zarzadzanie kalendarzem, obieg dokumentow, kontakt z kontrahentami.
 
 HANDEL MIEDZYNARODOWY (2008-2015, 7 lat): SOXO/G-LOOK — Specjalista ds. handlu zagranicznego, rynki wschodnie (Ukraina, Rosja, Bialorus, kraje baltyckie). Pozyskiwanie i obsluga kontrahentow, udzial w targach miedzynarodowych (Kijow, Minsk, Moskwa). Roczny przychod z obslugiwanego regionu: ponad 1 mln zl. Systemy: SubiektGT, IdoSell.
 
-FOTOGRAFIA: Nagradzana fotografka — TOP20 w konkursie Huawei Next Image (sposrod 600 tys. zgloszen), wielokrotna laureatka konkursow fotograficznych. Specjalizacja: fotografia produktowa i reportazowa. Bardzo dobra umiejetnosc, mozliwosc wykorzystania lokalizacji w Azji (Wietnam, Tajwan) do sesji zdjecio wych na miejscu.
+FOTOGRAFIA: Nagradzana fotografka — TOP20 w konkursie Huawei Next Image (sposrod 600 tys. zgloszen), wielokrotna laureatka konkursow fotograficznych. Specjalizacja: fotografia produktowa i reportazowa. Bardzo dobra umiejetnosc, mozliwosc wykorzystania lokalizacji w Azji (Wietnam, Tajwan) do sesji zdjeciowych na miejscu.
 
 WYKSZTALCENIE: Magister filologii rosyjskiej (Uniwersytet Gdanski) — zaawansowana znajomosc rosyjskiego w kontekscie biznesowym, komunikacja miedzykulturowa.`,
     linkedinUrl: 'https://www.linkedin.com/in/anna-wywigacz-16a35478/',
     portfolioUrl: '',
     salaryExpectation: {
-      min: 4000,
+      min: 3000,
       max: 0
     },
     preferredWorkMode: 'remote',
