@@ -94,7 +94,7 @@ KLUCZOWE ATUTY KANDYDATKI (uwzglednij przy wyszukiwaniu):
 1. E-COMMERCE (5 lat) - prowadzenie wlasnego sklepu (Shoper), Super Sprzedawca Allegro (100-300 zamowien/mies.), Etsy (rynki miedzynarodowe), IdoSell, Dawanda, Pakamera. Szukaj: specjalista e-commerce, marketplace manager, obsluga zamowien, koordynator sprzedazy online
 2. ADMINISTRACJA BIUROWA (2 lata) - fakturowanie (Optima, SubiektGT), obsluga biura, dokumentacja, delegacje, kalendarz. Szukaj: asystentka zdalna, wirtualna asystentka, office manager zdalny, administrator dokumentow
 3. HANDEL MIEDZYNARODOWY / ROSYJSKI (7 lat) - eksport na Ukraine, Rosje, Bialorus, kraje baltyckie. Targi w Kijowie, Minsku, Moskwie. Kontrakty zagraniczne, przychod 1+ mln zl/rok. Szukaj: koordynator eksportu, obsluga klienta rosyjskojezycznego, rynki wschodnie
-4. JEZYK ROSYJSKI zaawansowany - tlumaczenia, komunikacja biznesowa. Szukaj: tlumacz rosyjski, moderator rosyjskojezyczny, content rosyjski
+4. JEZYK ROSYJSKI zaawansowany - komunikacja biznesowa, obsluga klientow rosyjskojezycznych, korespondencja handlowa. Szukaj: obsluga klienta rosyjskojezycznego, koordynator rynkow wschodnich, moderator rosyjskojezyczny
 5. FOTOGRAFIA (nagradzana) - TOP20 Huawei Next Image, wygrane konkursy. Fotografia produktowa i reportazowa. Szukaj: fotograf produktowy zdalny, obrobka zdjec, content creator
 6. SOCIAL MEDIA i CONTENT - prowadzenie mediow spolecznosciowych, zdjecia produktowe, analiza rynku. Szukaj: social media manager, content manager, copywriter
 7. MS Excel (tabele przestawne), PowerPoint, systemy ERP (Optima, SubiektGT, IdoSell)
@@ -104,7 +104,7 @@ Mozliwe kierunki poszukiwan (szukaj WSZYSTKICH):
 - Wirtualna asystentka, asystent zdalny
 - Obsluga klienta (szczegolnie rosyjskojezycznego)
 - Administrator, koordynator biurowy zdalny
-- Tlumacz rosyjski, lokalizacja
+- Obsluga klienta rosyjskojezycznego, koordynator rynkow wschodnich
 - Content creator, social media manager, copywriter
 - Fotograf produktowy, obrobka zdjec
 - Koordynator projektow, koordynator zamowien
@@ -118,6 +118,7 @@ BEZWZGLEDNE WYKLUCZENIA (NIGDY nie pokazuj takich ofert):
 - Stanowiska wymagajace pozyskiwania nowych klientow, cold callingu, sprzedazy aktywnej, telemarketingu, akwizycji
 - Stanowiska wymagajace bieglego angielskiego (kandydatka zna angielski tylko podstawowo)
 - Stanowiska programistyczne/developerskie
+- Stanowiska tlumacza / tlumaczenia jako glowne obowiazki (rosyjski jest atutem dodatkowym, nie zawodem)
 ${negativePrefText}
 ${positivePrefText}
 ${excludedCompanies}
@@ -125,7 +126,7 @@ ${excludedCompanies}
 To jest iteracja numer ${iterationNumber}.${iterationNumber > 1 ? ' Wczesniejsze iteracje juz przeszukaly czesc ofert - szukaj NOWYCH ofert, ktore nie byly wczesniej prezentowane. Badz kreatywna w wyszukiwaniu - probuj nowych slow kluczowych i kombinacji.' : ''}
 
 INSTRUKCJE:
-1. Przeszukaj kazdy portal uzywajac ROZNYCH slow kluczowych: "e-commerce zdalna", "rosyjski", "asystentka zdalna", "obsluga zamowien", "marketplace", "allegro", "administrator zdalny", "social media", "content", "tlumacz", "koordynator", "fotograf produktowy", "virtual assistant" itp.
+1. Przeszukaj kazdy portal uzywajac ROZNYCH slow kluczowych: "e-commerce zdalna", "rosyjski", "asystentka zdalna", "obsluga zamowien", "marketplace", "allegro", "administrator zdalny", "social media", "content", "koordynator", "fotograf produktowy", "virtual assistant", "obsluga klienta zdalna" itp.
 2. Zwroc MINIMUM 15 ofert pracy (im wiecej, tym lepiej)
 3. Dla kazdej oferty podaj dane w DOKLADNIE tym formacie markdown:
 

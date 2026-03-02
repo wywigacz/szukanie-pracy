@@ -1,10 +1,65 @@
 const STORAGE_KEY = 'jobSearchApp';
 const MAX_SIZE_BYTES = 3.5 * 1024 * 1024;
 
+function defaultProfile() {
+  return {
+    name: 'Anna Wywigacz',
+    email: '',
+    phone: '',
+    location: 'Gdansk (praca zdalna)',
+    currentRole: 'Specjalista e-commerce / Handel miedzynarodowy / Administracja biurowa',
+    experienceYears: 14,
+    skills: [
+      'Allegro (Super Sprzedawca)',
+      'Etsy',
+      'Shoper',
+      'IdoSell',
+      'Optima',
+      'SubiektGT',
+      'MS Excel (tabele przestawne)',
+      'PowerPoint',
+      'Fotografia produktowa',
+      'Social Media',
+      'Obsluga klienta',
+      'Fakturowanie',
+      'Handel miedzynarodowy',
+      'Eksport (rynki wschodnie)',
+      'Obrobka zdjec'
+    ],
+    languages: [
+      'Polski (ojczysty)',
+      'Rosyjski (biegly)',
+      'Angielski (podstawowy)'
+    ],
+    education: 'Magister filologii rosyjskiej, Uniwersytet Gdanski',
+    cvSummary: `14 lat doswiadczenia zawodowego w 3 glownych obszarach:
+
+E-COMMERCE (2017-2022, 5 lat): Wlascicielka sklepu Hygge Macrame (Shoper) - recznie robiona bizuteria i dekoracje makramowe. Super Sprzedawca na Allegro (100-300 zamowien miesiecznie). Sprzedaz na Etsy (rynki miedzynarodowe), Dawanda, Pakamera. Pelna obsluga: od fotografii produktowej, przez wystawianie ofert, pakowanie, wysylke, po obsluge klienta.
+
+ADMINISTRACJA BIUROWA (2015-2017, 2 lata): DDS Poland Sp. z o.o. - Specjalista ds. administracji. Fakturowanie w systemie Optima, obsluga biura, rozliczanie delegacji, zarzadzanie kalendarzem, obieg dokumentow, kontakt z kontrahentami.
+
+HANDEL MIEDZYNARODOWY (2008-2015, 7 lat): SOXO/G-LOOK - Specjalista ds. handlu zagranicznego, rynki wschodnie (Ukraina, Rosja, Bialorus, kraje baltyckie). Pozyskiwanie i obsluga kontrahentow, udzial w targach miedzynarodowych (Kijow, Minsk, Moskwa). Roczny przychod z obslugiwanego regionu: ponad 1 mln zl. Systemy: SubiektGT, IdoSell.
+
+FOTOGRAFIA: Nagradzana fotografka - TOP20 w konkursie Huawei Next Image (sposrod 600 tys. zgloszen), wielokrotna laureatka konkursow fotograficznych. Specjalizacja: fotografia produktowa i reportazowa.
+
+WYKSZTALCENIE: Magister filologii rosyjskiej (Uniwersytet Gdanski) - zaawansowana znajomosc rosyjskiego w kontekscie biznesowym, tlumaczenia, komunikacja miedzykulturowa.`,
+    linkedinUrl: 'https://www.linkedin.com/in/anna-wywigacz-16a35478/',
+    portfolioUrl: '',
+    salaryExpectation: {
+      min: 4000,
+      max: 0
+    },
+    preferredWorkMode: 'remote',
+    preferredContractType: 'any',
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString()
+  };
+}
+
 function defaultState() {
   return {
     version: '1.0.0',
-    profile: null,
+    profile: defaultProfile(),
     iterations: [],
     jobs: {},
     preferences: {
